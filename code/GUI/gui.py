@@ -5,6 +5,7 @@ import time
 import matplotlib.pyplot as plt
 import pylab
 import subprocess
+import map
 x=-1
 y=-1
 
@@ -17,11 +18,14 @@ def build_map():
     root.title ('建立地图')
     root.geometry('600x500')
     root.mainloop()'''
-    os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_bringup minimal.launch; exec bash\"'")
+    os.system("gnome-terminal -e 'bash -c \"roslaunch wpr_simulation wpb_simple.launch; exec bash\"'")
     time.sleep(2)
-    os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_tutorials hector_mapping.launch; exec bash\"'")
-    p_temp = subprocess.Popen('rosrun map_server map_saver -f map', shell=True)
-    p_temp.wait()
+    os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_tutorials gmapping.launch; exec bash\"'")
+    time.sleep(2)
+    os.system("gnome-terminal -e 'bash -c \"rosrun wpr_simulation keyboard_vel_ctrl; exec bash\"'")
+    time.sleep(2)
+    os.system("gnome-terminal -e 'bash -c \"rosrun map_server map_saver -f map; exec bash\"'")
+
 
 
 
@@ -72,7 +76,7 @@ def navigation():
 
 root= Tk()
 root.title('简单ROS机器人控制程序')
-root.geometry('1100x600') # 这里的乘号不是 * ，而是小写英文字母 x
+root.geometry('1000x500') # 这里的乘号不是 * ，而是小写英文字母 x
 
 btn1 = Button(root, text='建立地图', command=build_map)
 btn1.place(relx=0.1, rely=0.4, relwidth=0.2, relheight=0.1)
