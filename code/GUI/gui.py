@@ -5,7 +5,7 @@ import time
 import matplotlib.pyplot as plt
 import pylab
 import subprocess
-import map
+import map.py
 x=-1
 y=-1
 
@@ -18,13 +18,8 @@ def build_map():
     root.title ('建立地图')
     root.geometry('600x500')
     root.mainloop()'''
-    os.system("gnome-terminal -e 'bash -c \"roslaunch wpr_simulation wpb_simple.launch; exec bash\"'")
-    time.sleep(2)
-    os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_tutorials gmapping.launch; exec bash\"'")
-    time.sleep(2)
-    os.system("gnome-terminal -e 'bash -c \"rosrun wpr_simulation keyboard_vel_ctrl; exec bash\"'")
-    time.sleep(2)
-    os.system("gnome-terminal -e 'bash -c \"rosrun map_server map_saver -f map; exec bash\"'")
+    m = map
+    m.buildMap()
 
 
 
