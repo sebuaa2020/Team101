@@ -17,22 +17,33 @@
    * ROS kinetic
 
    * IAI-Kinect2
+   * python3.5
+   * python libs: tklinker, matpoltlib, time, subprocess
 
 ### 使用步骤
 
 ---
 
 1. 配置运行环境
+    * 配置ubuntu16.04：https://ubuntu.com/tutorials/tutorial-install-ubuntu-desktop#1-overview
+    * 安装ROS（kinetic）：https://wiki.ros.org/kinetic/Installation/Ubuntu
+    * 获取IAI-Kinetic2 ：https://github.com/code-iai/iai_kinect2
+    * 安装RoboWare Studio
 
 2. 获取源码
 
-   ```
+    ```
    $ git clone git@github.com:sebuaa2020/Team101.git
    ```
 
 3. 编译运行
+    ```
+   $ cd code
+   $ cd python GUI
+   $ python -u gui.py
+   ```
 
-//补充具体指令
+
 
 ### 项目简介
 
