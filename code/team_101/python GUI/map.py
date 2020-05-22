@@ -48,12 +48,12 @@ class Map:
         subprocess.Popen('rm -f map.yaml', shell=True)
         
 
-    def getMap(self):
+    def getMap(self):#从指定路径获取地图
         path = os.getcwd() + '\maps\map.pgm'
         im = Image.open(path)
         return im
 
-    def mapException(self):
+    def mapException(self): #处理建图过程中的异常
         os.system("gnome-terminal -e 'bash -c \"rosrun move stop; exec bash\"'")
 
     def getMessage(self, STATE):

@@ -9,43 +9,38 @@ import subprocess
 from map import *
 from motion import *
 
+
+
+#标记
 x=-1
 y=-1
 
+user = 0 #标记是否是管理员
+m = Map()
+#抓取界面，目前为空
 def grab():
-    x=-1
+    print("This is a dummy precedure")
 
+#建图模块
 def build_map():
-    '''
-    root = Tk()
-    root.title ('建立地图')
-    root.geometry('600x500')
-    root.mainloop()
-    '''
-    finishBM = False
-    m = Map()
-    m.buildMap()
-
-def finish_build_map():
-
-    finishBM = True
+    if user == 1 : #是管理员
+        m.buildMap()
 
 
-def dnq(root1):
+#初始化x,y坐标值，并退出界面
+def dnq(root1): #deny and quit
     x=-1
     y=-1
     root1.destroy()
 
 def destination():
-    path = os.getcwd() + '/maps/map.pgm'
-    im = Image.open(path)
-    #im.show()
-    plt.imshow(im, cmap=plt.get_cmap("gray"))
-    pos = plt.ginput(1)
+    im = m.getMap() #获取地图
+    plt.imshow(im, cmap=plt.get_cmap("gray")) #显示地图
+    pos = plt.ginput(1) #获取鼠标点击位置
+    #记录坐标
     x=pos[0][0]
     y=pos[0][1]
-
-    if x > 0 and y > 0:
+    if x > 0 and y > 0: #显示选择终点页面
         root = Tk()
         root.title('是否确定选择终点？')
         root.geometry('300x50')
@@ -54,9 +49,10 @@ def destination():
         b1 = Button(root, text='退出', command=lambda: dnq(root))
         b1.place(relx=0.6, rely=0.2, relwidth=0.3, relheight=0.7)
         root.mainloop()
+
     
 
-
+#导航模块
 def navigation():
     root = Tk()
     root.title('定点巡航')
@@ -76,6 +72,11 @@ def navigation():
     b1.place(relx=0.7, rely=0.8, relwidth=0.2, relheight=0.1)
     root.mainloop()
 
+
+'''
+GUI设计
+包括主界面, 建立地图界面, 定点巡航界面, 目标抓取界面
+'''
 finishBM = False
 root= Tk()
 root.title('简单ROS机器人控制程序')

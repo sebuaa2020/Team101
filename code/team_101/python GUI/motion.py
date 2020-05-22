@@ -1,26 +1,49 @@
 import os
 import subprocess
+import os
+class move : #基础运动
+    def __init__(self,location,speed,direction):
+        self.location = location
+        self.speed = speed
+        self.direction = direction
 
-class move :
-    
+    def move(self):
+        if self.direction == 'go_forward':
+            self.go_forward()
+        elif self.direction == 'go_backward':
+            self.go_backward()
+        elif self.direction == 'go_left':
+            self.go_left()
+        elif self.direction == 'go_right':
+            self.go_right()
+        elif self.direction == 'turn_left':
+            self.turn_left()
+        elif self.direction == 'turn_right':
+            self.turn_right()
+
+    def set_target(self,location, direction):
+        self.target = (location,direction)
+
+    def has_obstruction(self):
+        os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_bringup lidar_test.launch; exec bash\"'")#启动雷达
+
     def go_forward(self):
-        subprocess.Popen('rosrun team_101 go_forward',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move go_forward; exec bash\"'")
 
     def go_backward(self):
-        subprocess.Popen('rosrun team_101 go_backward',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move go_backward; exec bash\"'")
 
     def go_left(self):
-        subprocess.Popen('rosrun team_101 go_left',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move go_left; exec bash\"'")
 
     def go_right(self):
-        subprocess.Popen('rosrun team_101 go_right',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move go_right; exec bash\"'")
 
     def stop(self):
-        subprocess.Popen('rosrun team_101 go_stop',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move stop; exec bash\"'")
 
     def turn_right(self):
-        subprocess.Popen('rosrun team_101 turn_right',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"rosrun move turn_right; exec bash\"'")
 
     def turn_left(self):
-        subprocess.Popen('rosrun team_101 turn_left',shell=True)
-   
+        os.system("gnome-terminal -e 'bash -c \"rosrun move go_left; exec bash\"'")
