@@ -8,6 +8,7 @@ import pylab
 import subprocess
 from map import *
 from motion import *
+from pathAgent import *
 
 #标记
 x=-1
@@ -29,28 +30,9 @@ def finish_build_map():
     m.saveMap()
 
 
-#初始化x,y坐标值，并退出界面
-def dnq(root1): #deny and quit
-    x=-1
-    y=-1
-    root1.destroy()
-
 def destination():
-    im = m.getMap() #获取地图
-    plt.imshow(im, cmap=plt.get_cmap("gray")) #显示地图
-    pos = plt.ginput(1) #获取鼠标点击位置
-    #记录坐标
-    x=pos[0][0]
-    y=pos[0][1]
-    if x > 0 and y > 0: #显示选择终点页面
-        root = Tk()
-        root.title('是否确定选择终点？')
-        root.geometry('300x50')
-        b = Button(root, text='确定', command=root.destroy)
-        b.place(relx=0.1, rely=0.2, relwidth=0.3, relheight=0.7)
-        b1 = Button(root, text='退出', command=lambda: dnq(root))
-        b1.place(relx=0.6, rely=0.2, relwidth=0.3, relheight=0.7)
-        root.mainloop()
+    nav = pathAgent()
+    nav.getpath()
 
     
 
