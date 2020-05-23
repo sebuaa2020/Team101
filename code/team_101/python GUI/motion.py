@@ -2,8 +2,7 @@ import os
 import subprocess
 import os
 class move : #基础运动
-    def __init__(self,location,speed,direction):
-        self.location = location
+    def __init__(self,speed,direction):
         self.speed = speed
         self.direction = direction
 
@@ -21,8 +20,6 @@ class move : #基础运动
         elif self.direction == 'turn_right':
             self.turn_right()
 
-    def set_target(self,location, direction):
-        self.target = (location,direction)
 
     def has_obstruction(self):
         os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_bringup lidar_test.launch; exec bash\"'")#启动雷达
