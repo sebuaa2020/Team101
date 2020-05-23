@@ -13,13 +13,21 @@ project(team_101)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
-  wpb_home_apps
   rospy 
-  pcl_conversions pcl_ros 
-  cv_bridge image_transport tf 
-  sensor_msgs geometry_msgs std_msgs visualization_msgs 
-  image_geometry message_generation
-  move_base_msgs actionlib 
+  pcl_conversions 
+  pcl_ros 
+  cv_bridge 
+  image_transport 
+  tf 
+  sensor_msgs 
+  geometry_msgs 
+  visualization_msgs 
+  image_geometry 
+  message_generation
+  move_base_msgs 
+  actionlib
+  robot_state_publisher
+  move_base_msgs 
 )
 
 include_directories(
@@ -216,7 +224,7 @@ include_directories(
 
 
 add_executable(go_forward
-  src/go_forward.cpp
+  src/motion/go_forward.cpp
 )
 add_dependencies(go_forward ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(go_forward
@@ -224,7 +232,7 @@ target_link_libraries(go_forward
 )
 
 add_executable(go_backward
-  src/go_backward.cpp
+  src/motion/go_backward.cpp
 )
 add_dependencies(go_backward ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(go_backward
@@ -232,7 +240,7 @@ target_link_libraries(go_backward
 )
 
 add_executable(turn_left
-  src/turn_left.cpp
+  src/motion/turn_left.cpp
 )
 add_dependencies(turn_left ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turn_left
@@ -240,7 +248,7 @@ target_link_libraries(turn_left
 )
 
 add_executable(turn_right
-  src/turn_right.cpp
+  src/motion/turn_right.cpp
 )
 add_dependencies(turn_right ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turn_right
@@ -248,7 +256,7 @@ target_link_libraries(turn_right
 )
 
 add_executable(go_left
-  src/go_left.cpp
+  src/motion/go_left.cpp
 )
 add_dependencies(go_left ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(go_left
@@ -256,9 +264,34 @@ target_link_libraries(go_left
 )
 
 add_executable(go_right
-  src/go_right.cpp
+  src/motion/go_right.cpp
 )
 add_dependencies(go_right ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(go_right
+  ${catkin_LIBRARIES}
+)
+
+
+add_executable(simple_goal
+  src/simple_goal.cpp
+)
+add_dependencies(simple_goal ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(simple_goal
+  ${catkin_LIBRARIES}
+)
+
+add_executable(simple_navi_goal
+  src/simple_navi_goal.cpp
+)
+add_dependencies(simple_goal ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(simple_navi_goal
+  ${catkin_LIBRARIES}
+)
+
+add_executable(keyboard_ctrl
+  src/keyboard_ctrl.cpp
+)
+add_dependencies(keyboard_ctrl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(keyboard_ctrl
   ${catkin_LIBRARIES}
 )
