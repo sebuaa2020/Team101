@@ -295,3 +295,12 @@ add_dependencies(keyboard_ctrl ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPO
 target_link_libraries(keyboard_ctrl
   ${catkin_LIBRARIES}
 )
+
+
+add_executable(laser_distance
+  src/laser_distance.cpp
+)
+add_dependencies(laser_distance ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(laser_distance
+  ${catkin_LIBRARIES}
+)
