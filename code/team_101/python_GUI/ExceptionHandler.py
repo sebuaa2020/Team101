@@ -1,4 +1,6 @@
 from motion import move
+import time
+import os
 class Exception:
     def __init__(self,type,current):
         self.ExceptionType = type #异常类型
@@ -15,4 +17,13 @@ class Exception:
             m = move(0,'stop')
             m.move()
         elif self.ExceptionType == 1 :
-
+            m = move(0,'stop')
+            m.move()
+            time.sleep(10)
+            m_resume = move(0.2,self.current)
+            m_resume.move
+        elif self.ExceptionType == 2 :
+            print("action to be complete in grab")
+        elif self.ExceptionType == 3 :
+            os.system("gnome-terminal -e 'bash -c \"python -u gui.py; exec bash\"'")
+            exit(0)
