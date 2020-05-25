@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Tkinter import *
 import os
 import signal
 from PIL import Image, ImageTk
@@ -9,7 +8,7 @@ import pylab
 import subprocess
 import numpy as np
 from motion import *
-
+from ExceptionHandler import *
 NORMAL = 1
 
 class Map:
@@ -59,7 +58,8 @@ class Map:
         return im
 
     def mapException(self): #处理建图过程中的异常
-        os.system("gnome-terminal -e 'bash -c \"rosrun move stop; exec bash\"'")
+        error = Exception(0,'')
+        Exception.ExceptionHandler()
 
     def getMessage(self, STATE):
         if STATE != NORMAL:

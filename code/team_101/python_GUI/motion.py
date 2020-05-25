@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-import os
+
 import subprocess
 import os
+from ExceptionHandler import *
 class move: #基础运动
-    '''
+
     def __init__(self, location, direction, speed):
         self.location = location
         self.direction = direction
         self.speed = speed
-    
+    '''
     def move(self):
         if self.direction == 'go_forward':
             self.go_forward()
@@ -29,6 +30,10 @@ class move: #基础运动
 
     def has_obstruction(self):
         os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_bringup lidar_test.launch; exec bash\"'")#启动雷达
+
+    def obstruction_excepetion(self):
+        error = Exception(1,self.direction)
+        error.ExceptionHandler()
 
     def go_forward(self):
         subprocess.Popen('rosrun team_101 go_forward', shell=True)
