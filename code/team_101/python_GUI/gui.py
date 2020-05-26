@@ -54,6 +54,9 @@ def navigation():
     b.place(relx=0.1, rely=0.8, relwidth=0.2, relheight=0.1)
     b1 = Button(root, text='退出', command=lambda: dnq(root))
     b1.place(relx=0.7, rely=0.8, relwidth=0.2, relheight=0.1)
+    path = os.getcwd() + '\maps\map.pgm'
+    im = Image.open(path)
+    im.show()
     root.mainloop()
 
 
