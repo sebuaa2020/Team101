@@ -22,8 +22,7 @@ def grab():
 
 #建图模块
 def build_map():
-    if user == 1 : #是管理员
-        m.buildMap()
+    m.buildMap()
 
 #建图模块
 def finish_build_map():
@@ -54,9 +53,6 @@ def navigation():
     b.place(relx=0.1, rely=0.8, relwidth=0.2, relheight=0.1)
     b1 = Button(root, text='退出', command=lambda: dnq(root))
     b1.place(relx=0.7, rely=0.8, relwidth=0.2, relheight=0.1)
-    path = os.getcwd() + '\maps\map.pgm'
-    im = Image.open(path)
-    im.show()
     root.mainloop()
 
 
@@ -81,7 +77,7 @@ btn2.place(relx=0.4, rely=0.15, relwidth=0.2, relheight=0.1)
 btn3 = Button(root, text='目标抓取', command=grab)
 btn3.place(relx=0.7, rely=0.15, relwidth=0.2, relheight=0.1)
 
-mo = move()
+mo = move(0,0,0)
 b1 = Button(root, text='向左转', command=mo.turn_left)
 b1.place(relx=0.1, rely=0.55, relwidth=0.2, relheight=0.1)
 b2 = Button(root, text='向右转', command=mo.turn_right)
