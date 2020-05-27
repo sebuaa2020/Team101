@@ -55,3 +55,6 @@ class move: #基础运动
 
     def turn_left(self):
         subprocess.Popen('rosrun team_101 turn_left', shell=True)
+    
+    def go_long(self):
+        subprocess.Popen('rosrun team_101 go_long', shell=True)

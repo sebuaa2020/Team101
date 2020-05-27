@@ -70,25 +70,29 @@ root.title('简单ROS机器人控制程序')
 root.geometry('1000x500') # 这里的乘号不是 * ，而是小写英文字母 x
 
 btn1 = Button(root, text='建立地图', command=build_map)
-btn1.place(relx=0.1, rely=0.4, relwidth=0.2, relheight=0.1)
+btn1.place(relx=0.1, rely=0.15, relwidth=0.2, relheight=0.1)
 
 btn4 = Button(root, text='停止建图', command=finish_build_map)
-btn4.place(relx=0.1, rely=0.6, relwidth=0.2, relheight=0.1)
+btn4.place(relx=0.1, rely=0.35, relwidth=0.2, relheight=0.1)
 
 btn2 = Button(root, text='定点巡航', command=navigation)
-btn2.place(relx=0.4, rely=0.4, relwidth=0.2, relheight=0.1)
+btn2.place(relx=0.4, rely=0.15, relwidth=0.2, relheight=0.1)
 
 btn3 = Button(root, text='目标抓取', command=grab)
-btn3.place(relx=0.7, rely=0.4, relwidth=0.2, relheight=0.1)
+btn3.place(relx=0.7, rely=0.15, relwidth=0.2, relheight=0.1)
 
 mo = move()
 b1 = Button(root, text='向左转', command=mo.turn_left)
-b1.place(relx=0.1, rely=0.8, relwidth=0.2, relheight=0.1)
+b1.place(relx=0.1, rely=0.55, relwidth=0.2, relheight=0.1)
 b2 = Button(root, text='向右转', command=mo.turn_right)
-b2.place(relx=0.3, rely=0.8, relwidth=0.2, relheight=0.1)
+b2.place(relx=0.3, rely=0.55, relwidth=0.2, relheight=0.1)
 b3 = Button(root, text='向前', command=mo.go_forward)
-b3.place(relx=0.5, rely=0.8, relwidth=0.2, relheight=0.1)
+b3.place(relx=0.5, rely=0.55, relwidth=0.2, relheight=0.1)
 b4 = Button(root, text='向后', command=mo.go_backward)
-b4.place(relx=0.7, rely=0.8, relwidth=0.2, relheight=0.1)
+b4.place(relx=0.7, rely=0.55, relwidth=0.2, relheight=0.1)
+b5 = Button(root, text='向前直走', command=mo.go_long)
+b5.place(relx=0.1, rely=0.75, relwidth=0.2, relheight=0.1)
+b6 = Button(root, text='停止', command=mo.stop)
+b6.place(relx=0.7, rely=0.75, relwidth=0.2, relheight=0.1)
 
 root.mainloop()

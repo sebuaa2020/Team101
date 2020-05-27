@@ -231,6 +231,22 @@ target_link_libraries(go_forward
   ${catkin_LIBRARIES}
 )
 
+add_executable(stop
+  src/motion/stop.cpp
+)
+add_dependencies(stop ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(stop
+  ${catkin_LIBRARIES}
+)
+
+add_executable(go_long
+  src/motion/go_long.cpp
+)
+add_dependencies(go_long ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(go_long
+  ${catkin_LIBRARIES}
+)
+
 add_executable(go_backward
   src/motion/go_backward.cpp
 )
