@@ -4,8 +4,9 @@ from pathCal import pathCal
 import os
 class pathAgent:
     def __init__(self):
-        self.m = map()
-        self.m.getMap()
+        #self.m = map()
+        #self.m.getMap()
+        self.m = ''
 
     def getpath(self): #调用pathcal类求路径
         p = pathCal()

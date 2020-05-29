@@ -1,4 +1,4 @@
-from motion import move
+from motion import *
 import time
 import os
 class Exception:
@@ -15,13 +15,13 @@ class Exception:
     def ExceptionHandler(self):
         if self.ExceptionType == 0 :
             m = move(0,'stop')
-            m.move()
+            m.stop()
         elif self.ExceptionType == 1 :
             m = move(0,'stop')
-            m.move()
+            m.stop()
             time.sleep(10)
             m_resume = move(0.2,self.current)
-            m_resume.move
+            #m_resume.move
         elif self.ExceptionType == 2 :
             print("action to be complete in grab")
         elif self.ExceptionType == 3 :
