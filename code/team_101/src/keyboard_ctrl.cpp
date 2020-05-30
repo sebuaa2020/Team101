@@ -51,7 +51,7 @@ int main(int argc, char** argv)
       if(base_cmd.linear.x > linear_vel*k_vel)
         base_cmd.linear.x = linear_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey=='s')
     {
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
       if(base_cmd.linear.x < -linear_vel*k_vel)
         base_cmd.linear.x = -linear_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey=='a')
     {
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
       if(base_cmd.linear.y > linear_vel*k_vel)
         base_cmd.linear.y = linear_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     }
     else if(cKey=='d')
     {
@@ -76,7 +76,7 @@ int main(int argc, char** argv)
       if(base_cmd.linear.y < -linear_vel*k_vel)
         base_cmd.linear.y = -linear_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey=='q')
     {
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
       if(base_cmd.angular.z > angular_vel*k_vel)
         base_cmd.angular.z = angular_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey=='e')
     {
@@ -92,7 +92,7 @@ int main(int argc, char** argv)
       if(base_cmd.angular.z < -angular_vel*k_vel)
         base_cmd.angular.z = -angular_vel*k_vel;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey==' ')
     {
@@ -100,7 +100,7 @@ int main(int argc, char** argv)
       base_cmd.linear.y = 0;
       base_cmd.angular.z = 0;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
     } 
     else if(cKey=='x')
     {
@@ -108,7 +108,7 @@ int main(int argc, char** argv)
       base_cmd.linear.y = 0;
       base_cmd.angular.z = 0;
       cmd_vel_pub.publish(base_cmd);
-      printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
+      // printf(" - linear.x= %.2f linear.y= %.2f angular.z= %.2f \n",base_cmd.linear.x,base_cmd.linear.y,base_cmd.angular.z);
       printf("退出！ \n");
       return 0;
     } 

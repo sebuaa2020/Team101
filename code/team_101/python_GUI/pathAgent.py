@@ -9,5 +9,8 @@ class pathAgent:
         self.m = ''
 
     def getpath(self): #调用pathcal类求路径
-        p = pathCal()
-        p.move()
+        self.p = pathCal()
+        self.p.move()
+
+    def endProcess(self): #中止导航过程
+        self.p.endMove()

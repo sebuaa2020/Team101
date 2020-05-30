@@ -8,19 +8,16 @@
   <include file="$(find team_101)/nav_lidar/amcl_omni.launch" />
 
   <!--- Run move base -->
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base"  output="screen">
-    <rosparam file="$(find team_101)/nav_lidar/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find team_101)/nav_lidar/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find team_101)/nav_lidar/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find team_101)/nav_lidar/global_costmap_params.yaml" command="load" />
-    <param name="base_global_planner" value="global_planner/GlobalPlanner" /> 
-    <param name="use_dijkstra" value="true"/>
-    <param name="base_local_planner" value="wpbh_local_planner/WpbhLocalPlanner" />
-    <param name= "controller_frequency" value="10" type="double"/>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find team_101)/nav_lidar/move_base_params.yaml" command="load" />
+    <rosparam file="$(find team_101)/nav_lidar/global_costmap_params.yaml" command="load" ns="global_costmap"/>
+    <rosparam file="$(find team_101)/nav_lidar/local_costmap_params.yaml" command="load" ns="local_costmap"/>
+    <rosparam file="$(find team_101)/nav_lidar/global_planner_params.yaml" command="load" ns="GlobalPlanner"/>
+    <rosparam file="$(find team_101)/nav_lidar/my_local_planner_params.yaml" command="load" ns="MYPlannerROS"/>
   </node>
 
   <!-- RViz and TF tree -->
-  <arg name="model" default="$(find wpb_home_bringup)/urdf/wpb_home.urdf"/>
+  <arg name="model" default="$(find team_101)/urdf/wpb_home.urdf"/>
   <arg name="gui" default="false" />
   <arg name="rvizconfig" default="$(find team_101)/rviz/nav.rviz" />
 
@@ -29,7 +26,7 @@
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-    <rosparam command="load" file="$(find wpb_home_bringup)/config/wpb_home.yaml" />
+    <rosparam command="load" file="$(find team_101)/config/wpb_home.yaml" />
   </node>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 

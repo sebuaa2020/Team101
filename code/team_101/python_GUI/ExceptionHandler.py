@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from motion import *
 import time
 import os

@@ -17,6 +17,7 @@ class Map:
         message_queue = list
         self.robot = 0
         self.hector_slam = 0
+        self.keyboard = 0
 
     def buildMap(self):
         # spawn机器人
@@ -26,6 +27,8 @@ class Map:
         
         # 开始建图
         self.hector_slam = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash -c \"roslaunch team_101 gmapping.launch; exec bash\"'],
+                            preexec_fn=os.setpgrp)
+        self.keyboard = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash -c \"rosrun team_101 keyboard_ctrl; exec bash\"'],
                             preexec_fn=os.setpgrp)
 
 
@@ -38,18 +41,19 @@ class Map:
         p_temp = subprocess.Popen('rosrun map_server map_saver -f map', shell=True)
         p_temp.wait()
         # os.system("gnome-terminal -e 'bash -c \"cp ~/map.pgm ~/catkin_ws/src/team_101/maps/\"'")
-        p_temp = subprocess.Popen('cp map.pgm ~/catkin_ws/src/team_101/python_GUI/maps/', shell=True)
+        p_temp = subprocess.Popen('cp map.pgm ~/catkin_ws/src/team_101/maps/', shell=True)
         p_temp.wait()
         p_temp = subprocess.Popen('rm -f map.pgm', shell=True)
         p_temp.wait()
         # os.system("gnome-terminal -e 'bash -c \"cp ~/map.yaml ~/catkin_ws/src/team_101/maps/\"'")
-        p_temp = subprocess.Popen('cp map.yaml ~/catkin_ws/src/team_101/python_GUI/maps/', shell=True)
+        p_temp = subprocess.Popen('cp map.yaml ~/catkin_ws/src/team_101/maps/', shell=True)
         p_temp.wait()
         p_temp = subprocess.Popen('rm -f map.yaml', shell=True)
         p_temp.wait()
         time.sleep(10)
         os.killpg(self.hector_slam.pid, signal.SIGINT)
         os.killpg(self.robot.pid, signal.SIGINT)
+        os.killpg(self.keyboard.pid, signal.SIGINT)
         
 
     def getMap(self):#从指定路径获取地图

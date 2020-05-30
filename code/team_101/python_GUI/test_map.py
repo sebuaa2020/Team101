@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import unittest
 from map import *
 from PIL import Image
