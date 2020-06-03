@@ -3,7 +3,7 @@
 import subprocess
 import os
 from ExceptionHandler import *
-from Tkinter import *
+from tkinter import *
 class move: #基础运动
 
     def __init__(self, location, direction, speed,map):

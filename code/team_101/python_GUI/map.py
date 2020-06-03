@@ -37,8 +37,8 @@ class Map:
     def saveMap(self):
         self.built = 0
         # 保存地图 
-        print "建图结束，自动保存地图"
-        print "……………………………………"
+        #print "建图结束，自动保存地图"
+        #print "……………………………………"
 
         p_temp = subprocess.Popen('rosrun map_server map_saver -f map', shell=True)
         p_temp.wait()
