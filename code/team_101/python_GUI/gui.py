@@ -13,7 +13,6 @@ from pathAgent import *
 #标记
 x=-1
 y=-1
-
 user = 1 #标记是否是管理员
 m = Map()
 nav = pathAgent()
@@ -27,7 +26,21 @@ def build_map():
 
 #建图模块
 def finish_build_map():
-    m.saveMap()
+    if m.built == 1:
+        m.saveMap()
+    else:
+        root = Tk()
+        root.title('错误')
+        root.geometry('300x80')
+        lb = Label(root, text='当前没有建图程序在运行', \
+                   fg='black', \
+                   font=(25), \
+                   width=30, \
+                   height=2, \
+                   relief=SUNKEN)
+        lb.pack()
+        root.mainloop()
+
 
 
 def destination():
@@ -79,7 +92,7 @@ btn5.place(relx=0.4, rely=0.35, relwidth=0.2, relheight=0.1)
 btn3 = Button(root, text='目标抓取', command=grab)
 btn3.place(relx=0.7, rely=0.15, relwidth=0.2, relheight=0.1)
 
-mo = move(0,0,0)
+mo = move(0,0,0,m.built)
 b1 = Button(root, text='向左转，q键', command=mo.turn_left)
 b1.place(relx=0.1, rely=0.55, relwidth=0.2, relheight=0.1)
 b2 = Button(root, text='向右转，e键', command=mo.turn_right)

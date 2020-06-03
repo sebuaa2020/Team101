@@ -18,8 +18,10 @@ class Map:
         self.robot = 0
         self.hector_slam = 0
         self.keyboard = 0
+        self.built = 0
 
     def buildMap(self):
+        self.bulit = 1
         # spawn机器人
         self.robot = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash  -c \"roslaunch team_101 robot_spawn.launch; exec bash\"'],
                             preexec_fn=os.setpgrp)
@@ -33,7 +35,7 @@ class Map:
 
 
     def saveMap(self):
-
+        self.built = 0
         # 保存地图 
         print "建图结束，自动保存地图"
         print "……………………………………"
