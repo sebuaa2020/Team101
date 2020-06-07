@@ -227,6 +227,18 @@ def login(E1, E2, top):
 def signin(E1,E2,top):
     username = E1.get()
     password = E2.get()
+	
+	if len(username)==0 or len(password)==0:	#用户名或密码都不能为空
+        root = Toplevel()
+        root.title('输入错误')
+        root.geometry('450x200')
+        root.resizable(False, False)
+        canvas_root = tkinter.Canvas(root, width=450, height=200)
+        im_root = get_image('empty_error.png', 450, 200)
+        canvas_root.create_image(220,100, image=im_root)
+        canvas_root.pack()
+        root.mainloop()
+	
     arr = np.load("../database.npy")#读取数据库
     arr = np.append(arr,[[username,password,'2']],axis=0)#加入数据库,注意不能随意添加管理员用户,因此新注册用户只能是普通用户
     np.save("../database.npy",arr)#保存数据库
