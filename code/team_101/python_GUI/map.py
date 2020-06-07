@@ -13,8 +13,6 @@ NORMAL = 1
 
 class Map:
     def __init__(self):
-        im = np.zeros((255,255))
-        message_queue = list
         self.robot = 0
         self.hector_slam = 0
         self.keyboard = 0
@@ -65,12 +63,8 @@ class Map:
 
     def mapException(self): #处理建图过程中的异常
         error = Exception(0,'')
-        Exception.ExceptionHandler()
+        error.ExceptionHandler()
 
-    def getMessage(self, STATE):
-        if STATE != NORMAL:
-            return 1
-        else :
-            return 0
+
 
 

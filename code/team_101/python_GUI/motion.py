@@ -13,10 +13,6 @@ class move: #基础运动
         self.map = map
 
 
-
-    def has_obstruction(self):
-        os.system("gnome-terminal -e 'bash -c \"roslaunch wpb_home_bringup lidar_test.launch; exec bash\"'")#启动雷达
-
     def obstruction_excepetion(self):
         error = Exception(1,self.direction)
         error.ExceptionHandler()

@@ -27,8 +27,6 @@ def kill(top):
         error.ExceptionHandler()
 
 
-
-
 #抓取界面，目前为空
 def grab():
     print("This is a dummy precedure")
