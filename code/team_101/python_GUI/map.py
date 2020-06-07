@@ -19,7 +19,7 @@ class Map:
         self.built = 0
 
     def buildMap(self):
-        self.bulit = 1
+        self.built = 1
         # spawn机器人
         self.robot = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash  -c \"roslaunch team_101 robot_spawn.launch; exec bash\"'],
                             preexec_fn=os.setpgrp)
