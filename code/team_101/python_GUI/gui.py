@@ -227,9 +227,8 @@ def login(E1, E2, top):
 def signin(E1,E2,top):
     username = E1.get()
     password = E2.get()
-	
-	if len(username)==0 or len(password)==0:	#用户名或密码都不能为空
-        root = Toplevel()
+    if len(username) == 0  or len(password) == 0:#用户名或密码都不能为空
+       	root = Toplevel()
         root.title('输入错误')
         root.geometry('450x200')
         root.resizable(False, False)

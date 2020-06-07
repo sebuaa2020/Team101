@@ -6,6 +6,7 @@ from tkinter import *
 import sys
 from PIL import *
 
+
 class Exception:
     def __init__(self,type,current,root):
         self.ExceptionType = type #异常类型
@@ -13,8 +14,8 @@ class Exception:
         self.root = root #
     
     def get_image(filename, width, height):
-    im = PIL.Image.open(filename).resize((width,height))
-    return ImageTk.PhotoImage(im)
+        im = PIL.Image.open(filename).resize((width,height))
+        return ImageTk.PhotoImage(im)
 
     '''
     Different types of defects:
