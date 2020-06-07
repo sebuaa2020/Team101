@@ -32,9 +32,9 @@ class Map:
         time.sleep(10)
         
         # 开始建图
-        #self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [程序运行] Rviz启动机器人\n' ))
-        #self.hector_slam = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash -c \"roslaunch team_101 gmapping.launch; exec bash\"'],
-        #                    preexec_fn=os.setpgrp)
+        self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [程序运行] Rviz启动机器人\n' ))
+        self.hector_slam = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash -c \"roslaunch team_101 gmapping.launch; exec bash\"'],
+                            preexec_fn=os.setpgrp)
         #self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [动作] Gazebo启动机器人\n' ))
         #self.keyboard = subprocess.Popen(['gnome-terminal', '--disable-factory', '-e', 'bash -c \"rosrun team_101 keyboard_ctrl; exec bash\"'],
         #                   preexec_fn=os.setpgrp)
