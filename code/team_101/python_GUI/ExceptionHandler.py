@@ -2,10 +2,10 @@
 from motion import *
 import time
 import os
-from tkinter import *
+from Tkinter import *
 import sys
-from PIL import *
-
+import PIL.Image
+import PIL.ImageTk
 
 class Exception:
     def __init__(self,type,current,root):
@@ -13,9 +13,9 @@ class Exception:
         self.current = current #记录当前行为
         self.root = root #
     
-    def get_image(filename, width, height):
+    def get_image(self,filename, width, height):
         im = PIL.Image.open(filename).resize((width,height))
-        return ImageTk.PhotoImage(im)
+        return PIL.ImageTk.PhotoImage(im)
 
     '''
     Different types of defects:

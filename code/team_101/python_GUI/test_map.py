@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 from map import *
-from PIL import Image
+import PIL.Image
 
 class Test_map(unittest.TestCase):
 
