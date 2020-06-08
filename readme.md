@@ -82,9 +82,11 @@
 ```
 .
 ├─code                          // 代码目录
-│  └─GUI                        // GUI部分
-│      └─maps
+│  ├─team_101                   // ROS包
+│  └─test                       // 测试代码     
 ├─docs                          // 文档部分
+├─docs-final                    // 最终提交版文档
+├─video                         // 最终提交版演示视频
 └─meetings                      // 会议纪要
 ```
 
