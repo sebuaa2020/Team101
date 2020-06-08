@@ -87,7 +87,7 @@ def get_image(filename, width, height):
     im = PIL.Image.open(filename).resize((width,height))
     return ImageTk.PhotoImage(im)
 
-def administrator():#普通用户界面(有建图控制)
+def administrator():#管理员用户界面(有建图控制)
     finishBM = False
     root= Tk()
     root.title('简单ROS机器人管理员控制程序')
