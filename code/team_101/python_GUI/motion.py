@@ -70,7 +70,7 @@ class move: #基础运动
             if min != 10:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [报错] 检测到近距离障碍物，距离' ))
                 self.log.insert("insert", min)
-                self.log.insert("insert", "米")
+                self.log.insert("insert", "米\n")
             else:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [反馈] 机器人向前移动0.15米\n' ))
 
@@ -101,7 +101,7 @@ class move: #基础运动
             if min != 10:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [报错] 检测到近距离障碍物，距离' ))
                 self.log.insert("insert", min)
-                self.log.insert("insert", "米")
+                self.log.insert("insert", "米\n")
             else:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [反馈] 机器人向后移动0.15米\n' ))
 
@@ -130,7 +130,7 @@ class move: #基础运动
             if min != 10:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [报错] 检测到近距离障碍物，距离' ))
                 self.log.insert("insert", min)
-                self.log.insert("insert", "米")
+                self.log.insert("insert", "米\n")
             else:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [反馈] 机器人向左移动0.15米\n' ))
 
@@ -159,7 +159,7 @@ class move: #基础运动
             if min != 10:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [报错] 检测到近距离障碍物，距离' ))
                 self.log.insert("insert", min)
-                self.log.insert("insert", "米")
+                self.log.insert("insert", "米\n")
             else:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [反馈] 机器人向右移动0.15米\n' ))
         else:
@@ -238,7 +238,7 @@ class move: #基础运动
             if min != 10:
                 self.log.insert("insert", dt.strftime( '%y-%m-%d %I:%M:%S %p [报错] 检测到近距离障碍物，距离' ))
                 self.log.insert("insert", min)
-                self.log.insert("insert", "米")
+                self.log.insert("insert", "米\n")
 
         else:
             root = Tk()
