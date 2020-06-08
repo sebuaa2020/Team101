@@ -57,6 +57,10 @@
 
 后端内容分为资源和代码。
 
+- src文件夹中保存了ros自主避障行走代码、坐标点导航代码、激光雷达代码、键盘控制行走代码
+- launch和nav_lidar文件夹中保存了ros基本硬件与算法调用脚本和历史参数
+- urdf、rviz、config、worlds为运行ros场景所需要的必要文件
+
 ### 项目目录
 
 ---
@@ -64,15 +68,15 @@
 ```
 .
 ├─config                         //场景参数
-├─launch                         //
+├─launch                         //ros启动功能、机器人脚本
 ├─maps                           //保存地图
-├─nav_lidar                      //
+├─nav_lidar                      //导航、避障算法和参数设置
 ├─python GUI                     //前段控制程序
-├─rviz                           //
+├─rviz                           //软件参数设置
 ├─src                            //自主行走控制
-├─urdf                           //
+├─urdf                           //软件模块参数设置
 ├─database                       //存储用户名及密码的小型数据库
-└─worlds                         //
+└─worlds                         //场景
 ```
 
 

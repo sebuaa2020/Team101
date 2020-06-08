@@ -84,7 +84,7 @@ def get_image(filename, width, height):
     im = PIL.Image.open(filename).resize((width,height))
     return PIL.ImageTk.PhotoImage(im)
 
-def administrator():#管理员用户界面(有建图控制)
+def administrator():#普通用户界面(有建图控制)
     finishBM = False
     global root
     root= Tk()
